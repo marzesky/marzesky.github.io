@@ -1,0 +1,182 @@
+.flex-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid white;
+  border-style: solid;
+  margin-top: 50px;
+}
+
+.flex-nav {
+  display: flex;
+  border: 1px solid white;
+  border-style: none solid solid solid
+}
+
+.project-listing{
+  height:20vh;
+  display: flex;
+  border: 1px solid white;
+  border-style: solid;
+  margin-top: 50px;
+}
+
+.listing-image{
+  width:20vh;
+  display: flex;
+  border: 1px solid white;
+  border-style: none solid none none
+}
+
+body{
+  background-color: black;
+  font-family: 'Space Mono', monospace;
+  margin: 0px 300px 0px 300px;
+}
+
+strong{
+  color: lightgray;
+}
+
+a{
+  color:white;
+  font-weight: 1000;
+}
+
+h1{
+  color: white;
+  font-size: 100px;
+  margin: 10px;
+  font-weight: 600;
+}
+
+h2{
+  color: white;
+  font-size: 60px;
+  margin: 10px;
+  font-weight: 100;
+}
+
+h3{
+  color:white;
+  font-size:40px;
+  margin: 10px;
+  font-weight: 100;
+}
+
+h4{
+  color:white;
+  font-size:30px;
+  margin: 0px 0px 0px 30px;
+  font-weight: 100;
+}
+
+p{
+  color: white;
+  margin: 0px 0px 0px 10px;
+  font-size:19px;
+  font-weight: 0
+}
+
+ol{
+  color: white;
+  font-size:19px;
+  font-weight: 100;
+  margin: 0px;
+}
+
+li{
+  color: white;
+  font-size:19px;
+  font-weight: 100;
+  margin: 0px;
+}
+
+iframe{
+  margin: 10px;
+  border: 1px solid white;
+  border-style: solid solid solid solid;
+}
+
+.tuto-img{
+  border: 1px solid white;
+  border-style: solid solid solid solid;
+  margin-bottom: 30px;
+}
+
+
+.nav-div {
+  flex: 1;
+  display: flex; /* add display: flex to make it a flex container */
+  align-items: center;
+  justify-content: center;
+}
+
+.current-div {
+  background-color: white;
+  animation-name: div-fade;
+  animation-duration: 1.7s;
+  animation-timing-function: cubic-bezier(.33,1.65,.67,-1.5);
+  animation-iteration-count: 1;
+}
+
+@keyframes div-fade {
+  0% {
+    background-color: black;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+.current-h2 {
+  color: black;
+  animation-name: h2-fade;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.33,1.65,.67,-1.5);
+  animation-iteration-count: 1;
+}
+
+@keyframes h2-fade {
+  0% {
+    color: white;
+  }
+  100% {
+    color: black;
+  }
+}
+
+.textbox{
+  border: 1px solid white;
+  border-style: none solid solid solid;
+  padding: 10px;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-box{
+  width:50vw;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.download-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:200px;
+  height:40px;
+  border: 1px solid white;
+  border-style: solid;
+  margin: 20px;
+  font-size: 25px;
+  background-color: lime;
+}
+
+.linelim{
+  border: 1px solid white;
+  border-style: solid none none none;
+}
