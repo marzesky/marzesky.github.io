@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Antoni - Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projets d'Antoni Marzewski - Portfolio de développement web et projets informatiques">
+  <title>Antoni Marzewski - Projets</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-
 <div id="menu-placeholder"></div>
 
-<h2>Projets BUT Informatique</h2>
-<div id='Scoleton' class='project-listing'>
-  <div class='listing-image'>
-    <img src="images/Scoleton.png" alt="Image Scoleton">
-  </div>
-  <div>
-    <h3>Scoleton</h3>
-    <p>
-      Un site web dynamique et sécurisé en PHP. Il permet d'importer des données et notes d'étudiants à partir de fichiers XLSX, 
-      de gérer le calcul des moyennes personnalisées, et de générer automatiquement des avis de poursuite d'études sous forme de PDF.
-    </p>
-  </div>
-</div>
+<main class="project-page">
+  <section id="university-projects">
+    <h1>Projets</h1>
+    <h2>BUT Informatique</h2>
+    <div id='Scoleton' class='project-listing' data-project-url="Scoleton.html">
+      <div class='listing-image'>
+        <img src="images/Scoleton.png" alt="Interface du projet Scoleton">
+      </div>
+      <div class="project-content">
+        <h3>Scoleton</h3>
+        <p>
+          Un site web dynamique et sécurisé en PHP. Il permet d'importer des données et notes d'étudiants à partir de fichiers XLSX, 
+          de gérer le calcul des moyennes personnalisées, et de générer automatiquement des avis de poursuite d'études sous forme de PDF.
+        </p>
+      </div>
+    </div>
+  </section>
 
-<h2>Projets Lycée</h2>
-<div id='PouBot' class='project-listing'>
-  <div class='listing-image'>
-    <img src="images/RobotPou.png" alt="Image PouBot">
-  </div>
-  <div>
-    <h3>PouBot</h3>
-    <p>Un programme Python capable de jouer aux mini-jeux du jeu Pou.</p>
-  </div>
-</div>
-<div id='Microfighters' class='project-listing'>
-  <div class='listing-image'>
-    <img src="images/Microfighters.png" alt="Image Microfighters">
-  </div>
-  <div>
-    <h3>Microfighters</h3>
-    <p>Un jeu plateforme de duel entre 2 joueurs jouant sur le même clavier, codé en Python.</p>
-  </div>
-</div>
-<!-- partial -->
+  <section id="high-school-projects">
+    <h2>Projets Lycée</h2>
+    <div id='PouBot' class='project-listing' data-project-url="PouBot.html">
+      <div class='listing-image'>
+        <img src="images/RobotPou.png" alt="Démonstration du PouBot en action">
+      </div>
+      <div class="project-content">
+        <h3>PouBot</h3>
+        <p>Un programme Python capable de jouer aux mini-jeux du jeu Pou.</p>
+      </div>
+    </div>
+    <div id='Microfighters' class='project-listing' data-project-url="Microfighters.html">
+      <div class='listing-image'>
+        <img src="images/Microfighters.png" alt="Capture d'écran du jeu Microfighters">
+      </div>
+      <div class="project-content">
+        <h3>Microfighters</h3>
+        <p>Un jeu plateforme de duel entre 2 joueurs jouant sur le même clavier, codé en Python.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
 <script src="./script.js"></script>
 </body>
 </html>

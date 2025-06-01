@@ -1,59 +1,64 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Antoni - Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PouBot - Un programme Python capable de jouer aux mini-jeux du jeu Pou">
+  <title>Antoni Marzewski - PouBot</title>
   <link rel="stylesheet" href="./style.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-
 <div id="menu-placeholder"></div>
 
-<div class='project-listing'>
-  <div class='listing-image'>
-    <img src="images/RobotPou.png" alt="Image PouBot">
-  </div>
-  <div>
-    <h3>PouBot</h3>
-    <n>
-    <p>Un programme Python capable de jouer aux mini-jeux du jeu Pou.</p>
-    <a href='https://drive.google.com/file/d/1bGdH3dgvv4q6nP-HVpRTpU-ljZBCNYVy/view?usp=sharing'><div class='download-button'>Télécharger</div></a>
-  </div>
-</div>
-<div class='textbox'>
-  <h4>Introduction</h4>
-  <p>En essence, <strong>PouBot</strong> est un programme qui a pour but jouer de maniere automatique a des <strong>mini-jeux</strong> du jeu pour smartphone <strong>Pou</strong>. <strong>Pou</strong> est un jeu pour smartphone inspire par Tamagochi, dans lequel on possede un animal de compagnie virtuel. Le but de ce jeu est de s'occuper des besoins de notre Pou et personalisser lui et son environement en utiliseant des pieces gagnes principalement dans des mini-jeux. Cependant, dans mon projet <strong>PouBot</strong> on s'interesse seulement a 3 mini-jeux pour lequelles j'ai cree des programmes qui jouent a ces mini-jeux de maniere <strong>automatique</strong>, le fonctionement detaille de ces programmes sera explique dans le paragraphe 'Fonctionnement'.</p>
-  <br>
-  <h4>Demonstration</h4>
-  <p>Voici une video qui presente PouBot en train de jouer au 3 mini-jeux Pou.</p>
-  <iframe width="960" height="540" src="https://www.youtube.com/embed/V1tIpTllXrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <br>
-  <h4>Utilisation</h4>
-  <p>PouBot peut etre utilisé seulement sur un ordinateur Windows, contrairement au jeu Pou qui lui est seulement disponible sur les smartphones. Pour créer un environement dont PouBot et Pou peuvent coexister et communiquer on decide d'utiliser un emulateur d'Android pour Windows, NoxPlayer.</p>
-  <br>
-  <h4>Tutoriel</h4>
-  <ol>
-    <li>Installez NoxPlayer en cliqueant <a href='https://www.bignox.com/'>ici</a>.</li>
-    <img class='tuto-img' src='images/InstallNox.png' alt="Installation NoxPlayer" width="960" height="540">
-    <li>Installez Pou sur NoxPlayer.</li>
-    <img class='tuto-img' src='images/InstallPou.png' alt="Installation Pou sur NoxPlayer" width="960" height="540">
-    <li>Lancez Pou sur NoxPlayer.</li>
-    <img class='tuto-img' src='images/LaunchPou.png' alt="Lancement Pou sur NoxPlayer" width="960" height="540">
-    <li>Mettrez la fenetre NoxPlayer en plein ecran.</li>
-    <img class='tuto-img' src='images/MaximizeNox.png' alt="Lancement Pou sur NoxPlayer" width="960" height="540">
-    <li>Lancez PouBot.</li>
-    <img class='tuto-img' src='images/LaunchPouBot.png' alt="Lancement PouBot" width="960" height="540">
-    <li>Choisir le mini-jeu auquel PouBot devra jouer sur NoxPlayer.</li>
-    <img class='tuto-img' src='images/ChooseGame.png' alt="Choix Minijeu" width="960" height="540">
-    <li>Suivre les consignes inclues dans le GUI de PouBot.</li>
-    <img class='tuto-img' src='images/PouBotHints.png' alt="Consignes PouBot" width="960" height="540">
-  </ol>
-</div>
+<main class="project-page">
+  <section class="project-header">
+    <h1>PouBot</h1>
+    <p class="project-subtitle">Un programme Python capable de jouer aux mini-jeux du jeu Pou</p>
+  </section>
 
-<!-- partial -->
-  <script  src="./script.js"></script>
+  <section class="project-content">
+    <div class="project-image">
+      <img src="images/RobotPou.png" alt="Démonstration du PouBot en action">
+    </div>
 
+    <h2>Description du projet</h2>
+    <p>
+      PouBot est un projet personnel réalisé en terminale. C'est un programme Python qui utilise la bibliothèque PyAutoGUI pour automatiser les mini-jeux du jeu Pou.
+    </p>
+
+    <h2>Fonctionnalités</h2>
+    <ol>
+      <li>Détection automatique de la position du jeu sur l'écran</li>
+      <li>Analyse en temps réel des éléments du jeu</li>
+      <li>Prise de décision et exécution des actions appropriées</li>
+      <li>Support de plusieurs mini-jeux différents</li>
+    </ol>
+
+    <h2>Technologies utilisées</h2>
+    <ul>
+      <li>Python</li>
+      <li>PyAutoGUI pour l'automatisation</li>
+      <li>OpenCV pour la détection d'images</li>
+      <li>NumPy pour les calculs</li>
+    </ul>
+
+    <h2>Défis et solutions</h2>
+    <p>
+      Le principal défi était de rendre le bot suffisamment rapide pour réagir en temps réel aux événements du jeu. 
+      J'ai optimisé les algorithmes de détection et utilisé des techniques de mise en cache pour améliorer les performances.
+    </p>
+
+    <h2>Résultats</h2>
+    <p>
+      Le bot est capable de jouer de manière autonome et d'obtenir des scores élevés dans plusieurs mini-jeux. 
+      Ce projet m'a permis d'approfondir mes connaissances en Python et en vision par ordinateur.
+    </p>
+  </section>
+</main>
+
+<script src="./script.js"></script>
 </body>
 </html>
