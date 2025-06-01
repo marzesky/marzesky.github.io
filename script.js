@@ -1,3 +1,29 @@
+// Dynamically load the menu
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("menu.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("menu-placeholder").innerHTML = data;
+
+        // Reattach event listeners after loading the menu
+        const about = document.getElementById("about");
+        const projects = document.getElementById("projects");
+        const contact = document.getElementById("contact");
+
+        about.addEventListener("click", function() {
+          window.location.href = "about.html";
+        });
+
+        projects.addEventListener("click", function() {
+          window.location.href = "projects.html";
+        });
+
+        contact.addEventListener("click", function() {
+          window.location.href = "contact.html";
+        });
+      });
+});
+
 //////////GLITCH ANIMATION LOGIC
 
 // Define the alphabet arrays outside the function
