@@ -13,51 +13,70 @@
 <body>
 <div id="menu-placeholder"></div>
 
-<main class="project-page">
-  <section class="project-header">
-    <h1>PouBot</h1>
-    <p class="project-subtitle">Un programme Python capable de jouer aux mini-jeux du jeu Pou</p>
-  </section>
+<div class='project-listing'>
+  <div class='listing-image'>
+    <img src="images/RobotPou.png" alt="Démonstration du PouBot en action">
+  </div>
+  <div>
+    <h2>PouBot</h2>
+    <p>Un programme Python intelligent qui automatise les mini-jeux du jeu Pou en utilisant la vision par ordinateur et l'automatisation</p>
+    <a href="https://github.com/marzesky/PouBot" target="_blank" class="social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+      Voir sur GitHub
+    </a>
+  </div>
+</div>
 
-  <section class="project-content">
-    <div class="project-image">
-      <img src="images/RobotPou.png" alt="Démonstration du PouBot en action">
-    </div>
+<section class="project-section">
+  <h2>Vue d'ensemble</h2>
+  <p>PouBot est un projet personnel développé pendant ma terminale qui démontre l'application pratique de la vision par ordinateur et de l'automatisation. Ce programme Python analyse en temps réel l'interface du jeu Pou et prend des décisions intelligentes pour jouer aux mini-jeux de manière autonome.</p>
+  
+  <div class="project-media">
+    <img src="images/RobotPou.png" alt="Interface du PouBot en action">
+  </div>
+</section>
 
-    <h2>Description du projet</h2>
-    <p>
-      PouBot est un projet personnel réalisé en terminale. C'est un programme Python qui utilise la bibliothèque PyAutoGUI pour automatiser les mini-jeux du jeu Pou.
-    </p>
+<section class="project-section">
+  <h2>Caractéristiques principales</h2>
+  <h3>Intelligence artificielle</h3>
+  <p>Le bot utilise des algorithmes sophistiqués pour :</p>
+  <ul>
+    <li>Détecter automatiquement la position du jeu sur n'importe quel écran</li>
+    <li>Analyser en temps réel les éléments du jeu et leur état</li>
+    <li>Prendre des décisions rapides basées sur l'analyse de la situation</li>
+    <li>S'adapter à différents mini-jeux avec des règles variées</li>
+  </ul>
+</section>
 
-    <h2>Fonctionnalités</h2>
-    <ol>
-      <li>Détection automatique de la position du jeu sur l'écran</li>
-      <li>Analyse en temps réel des éléments du jeu</li>
-      <li>Prise de décision et exécution des actions appropriées</li>
-      <li>Support de plusieurs mini-jeux différents</li>
-    </ol>
+<section class="project-section">
+  <h2>Technologies utilisées</h2>
+  <h3>Stack technique</h3>
+  <ul>
+    <li>Python comme langage principal de développement</li>
+    <li>PyAutoGUI pour l'automatisation précise des actions</li>
+    <li>OpenCV pour l'analyse d'image et la détection d'objets</li>
+    <li>NumPy pour les calculs matriciels optimisés</li>
+  </ul>
+</section>
 
-    <h2>Technologies utilisées</h2>
-    <ul>
-      <li>Python</li>
-      <li>PyAutoGUI pour l'automatisation</li>
-      <li>OpenCV pour la détection d'images</li>
-      <li>NumPy pour les calculs</li>
-    </ul>
+<section class="project-section">
+  <h2>Défis techniques</h2>
+  <p>Le développement de PouBot a présenté plusieurs défis intéressants :</p>
+  
+  <h3>Performance</h3>
+  <ul>
+    <li>Optimisation des algorithmes de détection pour une réponse en temps réel</li>
+    <li>Implémentation d'un système de cache intelligent pour les motifs récurrents</li>
+    <li>Réduction des zones d'analyse pour minimiser le temps de traitement</li>
+  </ul>
 
-    <h2>Défis et solutions</h2>
-    <p>
-      Le principal défi était de rendre le bot suffisamment rapide pour réagir en temps réel aux événements du jeu. 
-      J'ai optimisé les algorithmes de détection et utilisé des techniques de mise en cache pour améliorer les performances.
-    </p>
-
-    <h2>Résultats</h2>
-    <p>
-      Le bot est capable de jouer de manière autonome et d'obtenir des scores élevés dans plusieurs mini-jeux. 
-      Ce projet m'a permis d'approfondir mes connaissances en Python et en vision par ordinateur.
-    </p>
-  </section>
-</main>
+  <h3>Adaptabilité</h3>
+  <ul>
+    <li>Création d'un système robuste capable de fonctionner sur différentes résolutions d'écran</li>
+    <li>Gestion des variations de vitesse du jeu et des événements aléatoires</li>
+    <li>Développement d'une architecture modulaire pour faciliter l'ajout de nouveaux mini-jeux</li>
+  </ul>
+</section>
 
 <script src="./script.js"></script>
 </body>

@@ -9,8 +9,19 @@ if (mobileMenuButton) {
   });
 }
 
-// Handle browser back button
+// Handle browser back button and page visibility
 window.addEventListener('popstate', function(event) {
+  document.body.style.opacity = '1';
+});
+
+document.addEventListener('visibilitychange', function() {
+  if (!document.hidden) {
+    document.body.style.opacity = '1';
+  }
+});
+
+// Ensure page is visible when loaded
+window.addEventListener('pageshow', function(event) {
   document.body.style.opacity = '1';
 });
 
@@ -73,22 +84,45 @@ document.addEventListener("DOMContentLoaded", function () {
 // Moving background effect
 function initMovingBackground() {
   const background = document.querySelector('.animated-background');
-  const hero = document.querySelector('.hero-section');
+  const gradientElements = [
+    background.querySelector('::before'),
+    background.querySelector('::after'),
+    ...background.querySelectorAll('.gradient-circle')
+  ];
   
-  if (!background || !hero) return;
+  if (!background) return;
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let targetX = 0;
+  let targetY = 0;
 
   document.addEventListener('mousemove', (e) => {
     const x = e.clientX / window.innerWidth;
     const y = e.clientY / window.innerHeight;
     
-    const moveX = (x - 0.5) * 20;
-    const moveY = (y - 0.5) * 20;
-    
-    background.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    targetX = (x - 0.5) * 60;
+    targetY = (y - 0.5) * 60;
   });
 
+  function animate() {
+    const dx = targetX - mouseX;
+    const dy = targetY - mouseY;
+    
+    mouseX += dx * 0.1;
+    mouseY += dy * 0.1;
+    
+    const baseTransform = `translate(${mouseX}px, ${mouseY}px)`;
+    background.style.transform = `${baseTransform} scale(${1 + Math.abs(mouseX) * 0.001 + Math.abs(mouseY) * 0.001})`;
+    
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
   document.addEventListener('mouseleave', () => {
-    background.style.transform = 'translate(0, 0)';
+    targetX = 0;
+    targetY = 0;
   });
 }
 
