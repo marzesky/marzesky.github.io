@@ -7,7 +7,7 @@
   --spacing-unit: 1rem;
   --max-width: 1200px;
   --transition: all 0.3s ease;
-  --header-height: 4rem;
+  --header-height: 5rem;
   --hover-bg: rgba(255, 255, 255, 0.1);
   --semi-transparent-bg: rgba(26, 26, 26, 0.95);
 }
@@ -132,32 +132,40 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--spacing-unit);
-  border-bottom: 1px solid var(--hover-bg);
+  padding: 0 calc(var(--spacing-unit) * 2);
 }
 
 .logo h2 {
   margin: 0;
   font-size: 1.8rem;
   color: var(--accent-color);
+  white-space: nowrap;
 }
 
 .flex-nav {
   display: flex;
-  gap: calc(var(--spacing-unit) * 2);
+  gap: calc(var(--spacing-unit) * 1.5);
+  margin-left: auto;
+  padding-left: calc(var(--spacing-unit) * 2);
 }
 
 .nav-div {
-  padding: calc(var(--spacing-unit) * 0.5);
-  border-radius: 4px;
+  padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+  border-radius: 8px;
   transition: var(--transition);
   position: relative;
+  min-width: 120px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-div h2 {
   margin: 0;
   font-size: 1.6rem;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .nav-div:hover {
@@ -172,12 +180,13 @@ img {
 .nav-div.active::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
-  width: 30px;
-  height: 2px;
+  width: 40px;
+  height: 3px;
   background-color: var(--accent-color);
+  border-radius: 2px;
 }
 
 /* Hero Section */
@@ -240,22 +249,7 @@ img {
 }
 
 .scroll-icon::before {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  width: 4px;
-  height: 8px;
-  background: currentColor;
-  border-radius: 2px;
-  transform: translateX(-50%);
-  animation: scrollOnce 2s infinite;
-}
-
-@keyframes scrollOnce {
-  0% { transform: translate(-50%, 0); opacity: 1; }
-  50% { transform: translate(-50%, 10px); opacity: 0.2; }
-  100% { transform: translate(-50%, 0); opacity: 1; }
+  display: none;
 }
 
 /* Links and Buttons */
@@ -711,7 +705,7 @@ section:not(.hero-section) h2 {
 /* Media Queries */
 @media (max-width: 768px) {
   .flex-header {
-    padding: 0 calc(var(--spacing-unit) * 1);
+    padding: 0 var(--spacing-unit);
   }
 
   .logo h2 {
@@ -740,10 +734,11 @@ section:not(.hero-section) h2 {
   }
 
   .nav-div {
-    width: 100%;
+    width: 80%;
+    max-width: 300px;
+    min-width: auto;
     text-align: center;
     padding: calc(var(--spacing-unit) * 1.5);
-    margin: 0;
   }
 
   .nav-div.active::after {
@@ -887,4 +882,72 @@ p {
 
 .competence-block p {
   margin-bottom: 1rem;
+}
+
+.scroll-indicator-bottom {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--text-color);
+  opacity: 0.8;
+  z-index: 1000;
+  transition: all 0.5s ease;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.scroll-indicator-bottom p {
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+  font-size: 1rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+}
+
+.scroll-indicator-bottom .scroll-icon {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-indicator-bottom .mouse-icon,
+.scroll-indicator-bottom .smile-icon {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  color: var(--accent-color);
+  transition: all 0.5s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scroll-indicator-bottom .mouse-icon {
+  animation: scrollAnimation 2s 2;
+}
+
+.scroll-indicator-bottom .hidden {
+  opacity: 0;
+  transform: scale(0.5);
+  visibility: hidden;
+}
+
+@keyframes scrollAnimation {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+/* Suppression des anciens styles */
+.scroll-icon,
+.scroll-icon::before {
+  all: unset;
 }

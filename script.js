@@ -28,6 +28,31 @@ window.addEventListener('pageshow', function(event) {
 
 // Dynamically load the menu and handle active section
 document.addEventListener("DOMContentLoaded", function () {
+  // Create scroll indicator HTML
+  const scrollIndicatorHTML = `
+    <div class="scroll-indicator-bottom">
+      <p class="scroll-text">Faites défiler pour en découvrir plus</p>
+      <div class="scroll-icon">
+        <svg class="mouse-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="6" y="3" width="12" height="18" rx="6"></rect>
+          <line x1="12" y1="7" x2="12" y2="11"></line>
+        </svg>
+        <svg class="smile-icon hidden" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+          <line x1="9" y1="9" x2="9.01" y2="9"></line>
+          <line x1="15" y1="9" x2="15.01" y2="9"></line>
+        </svg>
+      </div>
+    </div>
+  `;
+  
+  // Add to the page
+  document.body.insertAdjacentHTML('beforeend', scrollIndicatorHTML);
+  
+  // Initialize the scroll indicator
+  initScrollIndicator();
+
   fetch("menu.html")
     .then(response => response.text())
     .then(data => {
@@ -308,4 +333,88 @@ poubot.addEventListener("click", function() {
   // navigate to contact.html
   window.location.href = "PouBot.html";
 });
+
+// Add scroll indicator to the page
+document.addEventListener("DOMContentLoaded", function () {
+  // Create scroll indicator HTML
+  const scrollIndicatorHTML = `
+    <div class="scroll-indicator-bottom">
+      <p class="scroll-text">Faites défiler pour en découvrir plus</p>
+      <div class="scroll-icon">
+        <svg class="mouse-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="6" y="3" width="12" height="18" rx="6"></rect>
+          <line x1="12" y1="7" x2="12" y2="11"></line>
+        </svg>
+        <svg class="smile-icon hidden" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+          <line x1="9" y1="9" x2="9.01" y2="9"></line>
+          <line x1="15" y1="9" x2="15.01" y2="9"></line>
+        </svg>
+      </div>
+    </div>
+  `;
+  
+  // Add to the page
+  document.body.insertAdjacentHTML('beforeend', scrollIndicatorHTML);
+  
+  // Initialize the scroll indicator
+  initScrollIndicator();
+});
+
+function initScrollIndicator() {
+  const scrollIndicator = document.querySelector('.scroll-indicator-bottom');
+  const scrollText = scrollIndicator?.querySelector('.scroll-text');
+  const mouseIcon = scrollIndicator?.querySelector('.mouse-icon');
+  const smileIcon = scrollIndicator?.querySelector('.smile-icon');
+  
+  if (!scrollIndicator || !scrollText || !mouseIcon || !smileIcon) return;
+
+  // Check if we're at the bottom of the page
+  function isAtBottom() {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const buffer = 50; // Buffer of 50px from bottom
+    
+    return documentHeight - (scrollTop + windowHeight) <= buffer;
+  }
+
+  // Update scroll indicator content
+  function updateScrollIndicator() {
+    if (isAtBottom()) {
+      scrollText.textContent = "N'hésitez pas à consulter les autres pages !";
+      mouseIcon.classList.add('hidden');
+      mouseIcon.style.animation = 'none';
+      smileIcon.classList.remove('hidden');
+    } else {
+      scrollText.textContent = "Faites défiler pour en découvrir plus";
+      mouseIcon.classList.remove('hidden');
+      mouseIcon.style.animation = 'scrollAnimation 2s 2';
+      smileIcon.classList.add('hidden');
+    }
+  }
+
+  // Initial check
+  updateScrollIndicator();
+
+  // Add scroll event listener with throttling
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateScrollIndicator();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Update on window resize with debouncing
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(updateScrollIndicator, 100);
+  });
+}
 
