@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const about = document.getElementById("about");
       const projects = document.getElementById("projects");
       const contact = document.getElementById("contact");
+      const portfoliodapprentissage = document.getElementById("portfoliodapprentissage");
 
       if (mobileMenuButton) {
         mobileMenuButton.addEventListener('click', () => {
@@ -81,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       projects?.addEventListener("click", () => navigate("projects.html"));
       contact?.addEventListener("click", () => navigate("contact.html"));
+      portfoliodapprentissage?.addEventListener("click", () => navigate("portfoliodapprentissage.html"));
 
       // Initialize glitch effect only for hero h1
       const heroTitle = document.querySelector('.hero-section h1[data-value]');

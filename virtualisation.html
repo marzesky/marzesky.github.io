@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TP Virtualisation - Gestion de conteneurs Docker avec bases de données MySQL et PostgreSQL">
+  <title>Antoni Marzewski - TP Virtualisation</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="menu-placeholder"></div>
+
+<main class="project-page">
+  <!-- Project Header -->
+  <section class="project-section">
+    <h2>TP Virtualisation sous Docker</h2>
+    <div class="project-content">
+      <p>
+        Ce TP portait sur la mise en place et la gestion d'une infrastructure de conteneurs Docker, 
+        intégrant plusieurs bases de données (MySQL et PostgreSQL) et un serveur web Apache. L'objectif était de créer 
+        une application web capable d'interagir avec ces différentes bases de données pour gérer un système de garage automobile.
+      </p>
+    </div>
+  </section>
+
+  <!-- Infrastructure -->
+  <section class="project-section">
+    <h3>Infrastructure et Configuration</h3>
+    <div class="project-media website-screenshot">
+      <img src="images/virtualisationSchema.png" alt="Schéma de l'infrastructure Docker">
+    </div>
+    <div class="content-block">
+      <p>
+        L'infrastructure se compose de plusieurs conteneurs Docker interconnectés :
+      </p>
+      <ul>
+        <li>Un conteneur MySQL avec phpMyAdmin pour la gestion visuelle</li>
+        <li>Un conteneur PostgreSQL avec pgAdmin pour l'interface d'administration</li>
+        <li>Un serveur web Apache avec PHP pour héberger l'application</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Base de données -->
+  <section class="project-section">
+    <h3>Gestion des Bases de Données</h3>
+    <div class="content-block">
+      <h4>MySQL - Base garageM</h4>
+      <div class="code-block">
+        <pre><code>CREATE TABLE voitures (
+  immatriculation VARCHAR(20) PRIMARY KEY,
+  couleur VARCHAR(20),
+  km INT
+);</code></pre>
+      </div>
+      <div class="project-media website-screenshot">
+        <img src="images/virtualisationPhpMyAdmin.png" alt="Interface phpMyAdmin montrant la base de données">
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h4>PostgreSQL - Base garageP</h4>
+      <div class="code-block">
+        <pre><code>CREATE TABLE voitures (
+  immatriculation VARCHAR(20) PRIMARY KEY,
+  puissance INT,
+  prix DECIMAL(10, 2)
+);</code></pre>
+      </div>
+      <div class="project-media website-screenshot">
+        <img src="images/virtualisationPgAdmin.png" alt="Interface pgAdmin montrant la base de données">
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Web -->
+  <section class="project-section">
+    <h3>Application Web PHP</h3>
+    <div class="content-block">
+      <h4>Affichage des Voitures</h4>
+      <p>
+        L'application permet d'afficher et de gérer les voitures stockées dans les deux bases de données simultanément. 
+        Le script PHP utilise PDO pour assurer une connexion sécurisée aux bases de données.
+      </p>
+      <div class="code-block">
+        <pre><code>// Exemple de connexion sécurisée avec PDO
+$options = [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+];
+$pdoMysql = new PDO($mysqlDsn, $mysqlUser, $mysqlPass, $options);
+$pdoPg = new PDO($pgDsn, $pgUser, $pgPass, $options);</code></pre>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h4>Fonctionnalités Implémentées</h4>
+      <ul>
+        <li>Affichage des voitures des deux bases de données</li>
+        <li>Ajout automatique de voitures avec données aléatoires</li>
+        <li>Gestion des erreurs et sécurisation des connexions</li>
+        <li>Interface web intuitive pour la visualisation des données</li>
+      </ul>
+
+      <div class="project-media website-screenshot">
+        <h4>Liste des voitures dans la base MySQL</h4>
+        <img src="images/virtualisationTestListeVoituresPhp.png" alt="Liste des voitures dans la base de données">
+      </div>
+
+      <div class="project-media website-screenshot">
+        <h4>Ajout d'une nouvelle voiture</h4>
+        <img src="images/virtualisationTestAjoutVoituresGaragePhp.png" alt="Interface d'ajout d'une nouvelle voiture">
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section class="project-section">
+    <h3>Compétences Développées</h3>
+    <div class="content-block">
+      <ul>
+        <li>Configuration et gestion de conteneurs Docker</li>
+        <li>Administration de bases de données MySQL et PostgreSQL</li>
+        <li>Développement PHP sécurisé avec PDO</li>
+        <li>Mise en place d'une architecture multi-conteneurs</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="back-to-projects">
+    <a href="projects.html" class="back-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Retour à la liste des projets
+    </a>
+  </div>
+
+</main>
+
+<script src="./script.js"></script>
+</body>
+</html> 

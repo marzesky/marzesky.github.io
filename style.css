@@ -864,3 +864,27 @@ p {
   width: 20px;
   height: 20px;
 }
+
+.aligned-list {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+/* Project Section Styles */
+.competence-block {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid var(--hover-bg);
+}
+
+.competence-block h4 {
+  font-size: 20px;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.competence-block p {
+  margin-bottom: 1rem;
+}
