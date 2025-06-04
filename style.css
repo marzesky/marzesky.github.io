@@ -611,9 +611,11 @@ section:not(.hero-section) h2 {
   cursor: pointer;
   padding: 0;
   z-index: 101;
+  position: relative;
 }
 
 .mobile-menu-button span {
+  display: block;
   width: 100%;
   height: 2px;
   background-color: var(--text-color);
@@ -692,7 +694,7 @@ section:not(.hero-section) h2 {
 /* Media Queries */
 @media (max-width: 768px) {
   .flex-header {
-    padding: 0 calc(var(--spacing-unit) * 0.5);
+    padding: 0 calc(var(--spacing-unit) * 1);
   }
 
   .logo h2 {
@@ -702,7 +704,7 @@ section:not(.hero-section) h2 {
   .flex-nav {
     position: fixed;
     top: var(--header-height);
-    right: -100%;
+    left: -100%;
     width: 100%;
     height: calc(100vh - var(--header-height));
     background: var(--semi-transparent-bg);
@@ -715,12 +717,13 @@ section:not(.hero-section) h2 {
   }
 
   .flex-nav.nav-active {
-    right: 0;
+    left: 0;
   }
 
   .nav-div {
     width: 100%;
     text-align: center;
+    padding: calc(var(--spacing-unit) * 1.5);
   }
 
   .mobile-menu-button {
@@ -801,4 +804,34 @@ p {
 
 .content-block:first-child {
   margin-top: var(--spacing-unit);
+}
+
+/* Back to Projects Button */
+.back-to-projects {
+  display: flex;
+  justify-content: center;
+  margin: calc(var(--spacing-unit) * 4) 0;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-unit);
+  padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 157, 0.2);
+}
+
+.back-button svg {
+  width: 20px;
+  height: 20px;
 }
