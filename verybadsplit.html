@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Very Bad Split - Une application web de gestion et partage des dépenses en groupe">
+  <title>Antoni Marzewski - Very Bad Split</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="menu-placeholder"></div>
+
+<main class="project-page">
+  <!-- Project Header -->
+  <section class="project-section">
+    <h2>Very Bad Split</h2>
+    <div class="project-content">
+      <p>Very Bad Split est né d'un besoin concret : simplifier la gestion des dépenses partagées lors d'événements entre amis ou en groupe. En tant que développeur sur ce projet, j'ai principalement concentré mes efforts sur l'interface utilisateur et l'expérience interactive, notamment à travers les templates Twig et les fonctionnalités JavaScript.</p>
+    </div>
+  </section>
+
+  <!-- Contexte et Utilisation -->
+  <section class="project-section">
+    <h3>Contexte d'Utilisation</h3>
+    <div class="project-media website-screenshot">
+      <img src="images/vbsEvenementExemple.png" alt="Interface d'un événement Very Bad Split">
+    </div>
+    <div class="content-block">
+      <p>L'application répond à un scénario courant : lors d'un voyage entre amis ou d'une colocation, les dépenses sont souvent réparties de manière désorganisée. Certains membres du groupe paient pour les courses, d'autres pour le logement, et au fil du temps, il devient difficile de savoir qui doit combien à qui. Very Bad Split permet de centraliser toutes ces dépenses et de calculer automatiquement les remboursements nécessaires.</p>
+    </div>
+  </section>
+
+  <!-- Structure et Interface -->
+  <section class="project-section">
+    <h3>Structure et Interface</h3>
+    <div class="content-block">
+      <p>Le cœur du système repose sur la notion d'événements. Chaque événement possède un code secret unique qui permet aux participants d'y accéder, même sans compte utilisateur. Cette approche simplifie le partage tout en maintenant un niveau de sécurité adapté à l'usage.</p>
+    </div>
+
+    <div class="project-media website-screenshot">
+      <img src="images/vbsInscription.png" alt="Interface d'inscription Very Bad Split">
+    </div>
+    <div class="content-block">
+      <h4>Architecture Frontend</h4>
+      <p>Dans le développement des templates Twig, j'ai mis en place une structure modulaire et efficace :</p>
+      <ul>
+        <li>Un template principal <code>base.html.twig</code> servant de squelette à l'application</li>
+        <li>Des composants réutilisables pour les dépenses et les événements</li>
+        <li>Une interface responsive construite avec le framework Bulma CSS</li>
+        <li>Des formulaires avec validation côté client pour une meilleure expérience utilisateur</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Fonctionnalités Avancées -->
+  <section class="project-section">
+    <h3>Fonctionnalités Avancées</h3>
+    
+    <div class="content-block">
+      <h4>Système d'Autocomplétion des Membres</h4>
+      <div class="project-media website-screenshot">
+        <img src="images/vbsAutocompletion.png" alt="Démonstration du système d'autocomplétion des membres">
+      </div>
+      <p>L'autocomplétion des membres représente un élément clé de l'interface utilisateur que j'ai développé pour Very Bad Split. Cette fonctionnalité, implémentée dans <code>autocompletion-membre.js</code>, facilite l'ajout de participants aux événements en offrant une recherche dynamique et intuitive.</p>
+      <p>Le système repose sur une interface épurée avec un champ de recherche unique qui se connecte à une API de recherche d'utilisateurs. Dès que l'utilisateur commence à taper, le système attend 300ms (debouncing) avant d'envoyer une requête au serveur, évitant ainsi la surcharge. Les résultats s'affichent dans une liste déroulante stylisée avec Bulma, permettant une navigation fluide via souris ou clavier (touches ↑/↓, Entrée, Échap).</p>
+      <p>La sécurité n'est pas négligée, avec l'intégration de tokens CSRF et une validation empêchant la soumission du formulaire sans sélection valide. Le système gère également les erreurs API et fournit un retour visuel immédiat. Cependant, quelques limitations persistent, notamment l'absence d'indicateurs de chargement et une gestion basique des erreurs de connexion.</p>
+      <p>Cette fonctionnalité illustre bien l'approche moderne adoptée dans le projet, combinant une expérience utilisateur fluide avec une implementation technique robuste, tout en maintenant la cohérence visuelle avec le thème sombre de l'application.</p>
+    </div>
+
+    <div class="content-block">
+      <h4>Algorithme de Simplification des Dettes</h4>
+      <p>L'une des parties les plus complexes du projet réside dans l'algorithme de simplification des dettes. Le système transforme les dettes brutes en un ensemble minimal de transactions. Par exemple, si A doit 10€ à B, qui doit 10€ à C, l'algorithme suggère directement que A paie 10€ à C, réduisant ainsi le nombre de transactions nécessaires.</p>
+    </div>
+  </section>
+
+  <!-- Aspects Techniques -->
+  <section class="project-section">
+    <h3>Aspects Techniques</h3>
+    <div class="content-block">
+      <h4>Architecture et Sécurité</h4>
+      <ul>
+        <li>Architecture MVC avec routage moderne et gestion des dépendances via Composer</li>
+        <li>Protection CSRF sur toutes les opérations sensibles</li>
+        <li>Base de données relationnelle optimisée pour la gestion des événements et des dépenses</li>
+        <li>Système de validation robuste côté client et serveur</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <h4>Défis et Perspectives</h4>
+      <p>Le développement a présenté plusieurs défis techniques intéressants, notamment dans la gestion des modifications simultanées et l'optimisation des performances. Bien que l'application soit pleinement fonctionnelle, certains aspects comme la gestion des conflits de modification et l'expérience utilisateur pourraient être améliorés dans les versions futures.</p>
+    </div>
+  </section>
+</main>
+
+<script src="./script.js"></script>
+</body>
+</html> 
