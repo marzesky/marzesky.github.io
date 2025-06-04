@@ -887,8 +887,9 @@ p {
 .scroll-indicator-bottom {
   position: fixed;
   bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 1rem;
+  left: auto;
+  transform: none;
   text-align: center;
   color: var(--text-color);
   opacity: 0.8;
@@ -950,4 +951,20 @@ p {
 .scroll-icon,
 .scroll-icon::before {
   all: unset;
+}
+
+.project-content {
+  position: relative;
+}
+
+.project-content h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-date {
+  font-size: 0.9rem;
+  color: rgba(224, 224, 224, 0.6);
+  margin-top: 1rem;
+  font-style: italic;
 }
