@@ -6,6 +6,7 @@ if (mobileMenuButton) {
   mobileMenuButton.addEventListener('click', () => {
     nav.classList.toggle('nav-active');
     mobileMenuButton.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
   });
 }
 
@@ -25,21 +26,46 @@ window.addEventListener('pageshow', function(event) {
   document.body.style.opacity = '1';
 });
 
-// Dynamically load the menu
+// Dynamically load the menu and handle active section
 document.addEventListener("DOMContentLoaded", function () {
   fetch("menu.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("menu-placeholder").innerHTML = data;
       
+      // Set active section based on current page
+      const currentPage = window.location.pathname.split('/').pop().split('.')[0] || 'index';
+      const navItems = document.querySelectorAll('.nav-div');
+      navItems.forEach(item => {
+        if (item.getAttribute('data-page') === currentPage) {
+          item.classList.add('active');
+        }
+      });
+
       // Reattach event listeners after loading the menu
+      const mobileMenuButton = document.querySelector('.mobile-menu-button');
+      const nav = document.querySelector('.flex-nav');
       const about = document.getElementById("about");
       const projects = document.getElementById("projects");
       const contact = document.getElementById("contact");
 
+      if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', () => {
+          nav.classList.toggle('nav-active');
+          mobileMenuButton.classList.toggle('active');
+          document.body.classList.toggle('menu-open');
+        });
+      }
+
       // Add smooth navigation
       const navigate = (url, isAbout = false) => {
         document.body.style.opacity = '0';
+        // Close mobile menu if open
+        if (nav.classList.contains('nav-active')) {
+          nav.classList.remove('nav-active');
+          mobileMenuButton.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        }
         setTimeout(() => {
           if (isAbout) {
             window.location.href = './index.html';
