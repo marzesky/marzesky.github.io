@@ -13,70 +13,76 @@
 <body>
 <div id="menu-placeholder"></div>
 
-<div class='project-listing'>
-  <div class='listing-image'>
-    <img src="images/RobotPou.png" alt="Démonstration du PouBot en action">
-  </div>
-  <div>
+<main class="project-page">
+  <!-- Project Header -->
+  <section class="project-section">
     <h2>PouBot</h2>
-    <p>Un programme Python intelligent qui automatise les mini-jeux du jeu Pou en utilisant la vision par ordinateur et l'automatisation</p>
-    <a href="https://github.com/marzesky/PouBot" target="_blank" class="social-link">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-      Voir sur GitHub
-    </a>
-  </div>
-</div>
+    <div class="project-media rectangular">
+      <img src="images/RobotPou.png" alt="Démonstration du PouBot en action">
+    </div>
+    <div class="project-content">
+      <p>Un programme Python intelligent qui automatise les mini-jeux du jeu Pou en utilisant la vision par ordinateur et l'automatisation.</p>
+      <div class="project-links">
+        <a href="https://drive.google.com/file/d/1bGdH3dgvv4q6nP-HVpRTpU-ljZBCNYVy/view?usp=sharing" class="download-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Télécharger PouBot
+        </a>
+      </div>
+    </div>
+  </section>
 
-<section class="project-section">
-  <h2>Vue d'ensemble</h2>
-  <p>PouBot est un projet personnel développé pendant ma terminale qui démontre l'application pratique de la vision par ordinateur et de l'automatisation. Ce programme Python analyse en temps réel l'interface du jeu Pou et prend des décisions intelligentes pour jouer aux mini-jeux de manière autonome.</p>
-  
-  <div class="project-media">
-    <img src="images/RobotPou.png" alt="Interface du PouBot en action">
-  </div>
-</section>
+  <!-- Introduction -->
+  <section class="project-section">
+    <h3>Vue d'ensemble</h3>
+    <p>PouBot est un projet personnel développé pendant ma terminale qui démontre l'application pratique de la vision par ordinateur et de l'automatisation. Ce programme Python analyse en temps réel l'interface du jeu Pou et prend des décisions intelligentes pour jouer aux mini-jeux de manière autonome.</p>
+  </section>
 
-<section class="project-section">
-  <h2>Caractéristiques principales</h2>
-  <h3>Intelligence artificielle</h3>
-  <p>Le bot utilise des algorithmes sophistiqués pour :</p>
-  <ul>
-    <li>Détecter automatiquement la position du jeu sur n'importe quel écran</li>
-    <li>Analyser en temps réel les éléments du jeu et leur état</li>
-    <li>Prendre des décisions rapides basées sur l'analyse de la situation</li>
-    <li>S'adapter à différents mini-jeux avec des règles variées</li>
-  </ul>
-</section>
+  <!-- Démonstration -->
+  <section class="project-section">
+    <h3>Démonstration</h3>
+    <p>Voici une vidéo qui montre le PouBot en action :</p>
+    <div class="project-media">
+      <iframe src="https://www.youtube.com/embed/V1tIpTllXrQ" title="Démonstration PouBot" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <p>Les mouvements de la souris que vous voyez dans la vidéo sont automatiques. Le bot analyse l'écran en temps réel et prend des décisions en fonction des obstacles, des plateformes, etc. La seule action à effectuer par l'utilisateur est de lancer le programme après avoir démarré un mini-jeu dans le jeu Pou sur l'émulateur. Pour information, l'émulateur utilisé est NoxPlayer, lancé en plein écran sur un écran d'une résolution de 1920x1080 pixels.</p>
+  </section>
 
-<section class="project-section">
-  <h2>Technologies utilisées</h2>
-  <h3>Stack technique</h3>
-  <ul>
-    <li>Python comme langage principal de développement</li>
-    <li>PyAutoGUI pour l'automatisation précise des actions</li>
-    <li>OpenCV pour l'analyse d'image et la détection d'objets</li>
-    <li>NumPy pour les calculs matriciels optimisés</li>
-  </ul>
-</section>
+  <!-- Technologies -->
+  <section class="project-section">
+    <h3>Technologies Utilisées</h3>
+    <p>Le projet utilise plusieurs bibliothèques Python spécialisées pour accomplir ses tâches :</p>
+    
+    <div class="subsection">
+      <div class="project-media square">
+        <img src="images/python-logo.png" alt="Logo Python">
+      </div>
+      <div class="content">
+        <h3>Vision par Ordinateur Simple</h3>
+        <p>Le bot utilise PyAutoGUI pour :</p>
+        <ul>
+          <li>Analyser l'état du jeu via la détection de pixels spécifiques à l'écran</li>
+          <li>Identifier les obstacles et plateformes par leur couleur</li>
+          <li>Prendre des décisions basées sur l'analyse des pixels</li>
+          <li>Automatiser les mouvements de la souris avec précision via Win32api</li>
+        </ul>
+      </div>
+    </div>
 
-<section class="project-section">
-  <h2>Défis techniques</h2>
-  <p>Le développement de PouBot a présenté plusieurs défis intéressants :</p>
-  
-  <h3>Performance</h3>
-  <ul>
-    <li>Optimisation des algorithmes de détection pour une réponse en temps réel</li>
-    <li>Implémentation d'un système de cache intelligent pour les motifs récurrents</li>
-    <li>Réduction des zones d'analyse pour minimiser le temps de traitement</li>
-  </ul>
-
-  <h3>Adaptabilité</h3>
-  <ul>
-    <li>Création d'un système robuste capable de fonctionner sur différentes résolutions d'écran</li>
-    <li>Gestion des variations de vitesse du jeu et des événements aléatoires</li>
-    <li>Développement d'une architecture modulaire pour faciliter l'ajout de nouveaux mini-jeux</li>
-  </ul>
-</section>
+    <!-- Mini-jeux -->
+    <section class="project-section">
+      <h3>Mini-jeux Automatisés</h3>
+      <p>PouBot peut jouer à plusieurs mini-jeux différents :</p>
+      <ul>
+        <li><strong>Pet Walk Bot :</strong> Analyse les obstacles (eau, nuages, arbres) et effectue les actions appropriées (glisser vers le haut, bas, droite)</li>
+        <li><strong>Sky Hop Bot :</strong> Calcule la distance entre les plateformes et ajuste les sauts en conséquence</li>
+        <li><strong>Water Hop Bot :</strong> Détecte les plateformes sûres et évite les obstacles</li>
+      </ul>
+    </section>
+  </section>
 
 <script src="./script.js"></script>
 </body>
