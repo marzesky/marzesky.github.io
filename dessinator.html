@@ -22,52 +22,64 @@
     </div>
     <div class="project-content">
       <p>Dessinator est une application web de dessin sous contraintes conçue pour aider les étudiants à structurer leurs compositions graphiques. Elle permet de créer des formes telles que des ellipses, des rectangles, des lignes ou des zones de texte, tout en appliquant des règles de mise en page précises.</p>
-      <div class="project-date">Septembre 2025 - Décembre 2025</div>
+      <div class="project-date">Septembre 2025 - (en cours)</div>
     </div>
   </section>
 
-  <!-- Contexte et Objectifs -->
+  <!-- Contexte du projet -->
   <section class="project-section">
-    <h3>Contexte et Objectifs</h3>
-    <p>L'objectif principal de Dessinator est de proposer un atelier numérique pour explorer les principes de composition visuelle. Les utilisateurs peuvent manipuler des formes, définir des contraintes d'alignement horizontal ou vertical, imposer un centrage automatique et regrouper des éléments pour créer des maquettes cohérentes. L'application guide ainsi l'utilisateur vers une organisation rigoureuse sans sacrifier la créativité.</p>
+    <h3>Contexte du projet</h3>
+    <div class="content-block">
+      <ul class="aligned-list">
+        <li>Période : septembre 2025 à (en cours) (Semestre 5 du BUT Informatique).</li>
+        <li>Commande académique : atelier de conception d’un outil de dessin sous contraintes.</li>
+        <li>Équipe de 5 étudiants</li>
+        <li>Contraintes : respecter un cahier des charges orienté pédagogie et livrer un prototype fonctionnel démontrable.</li>
+      </ul>
+    </div>
+    <p>L'objectif était de proposer un atelier numérique aidant les étudiants à explorer les principes de composition visuelle. Le produit final devait faciliter la création de maquettes en imposant des règles d'alignement et de centrage tout en laissant place à la créativité.</p>
   </section>
 
-  <!-- Fonctionnalités Clés -->
+  <!-- Méthodes de travail et résultats -->
   <section class="project-section">
-    <h3>Fonctionnalités Clés</h3>
+    <h3>Méthodes de travail et résultats</h3>
+    <div class="content-block">
+      <h4>Ma contribution</h4>
+      <p>Je me suis concentré sur la logique autour du texte et sur les contraintes d’alignement (haut, bas, gauche, droite). J’ai conçu les structures de données permettant de regrouper dynamiquement les éléments et d’appliquer des règles cohérentes lorsque l’utilisateur les déplace ou les redimensionne.</p>
+    </div>
     <div class="project-media website-screenshot">
       <img src="images/dessinator/dessinatorDessinExemple.png" alt="Exemple de dessin créé avec Dessinator">
     </div>
     <div class="content-block">
-      <h4>Bibliothèque de Formes</h4>
-      <p>La palette de Dessinator inclut des ellipses, rectangles, lignes directrices et blocs de texte. Chaque élément peut être stylisé (couleurs, épaisseur de trait, niveau de transparence) afin de composer des scènes variées.</p>
+      <h4>Bibliothèque de formes</h4>
+      <p>Nous avons modélisé une palette de formes (ellipses, rectangles, lignes et zones de texte) afin que l'utilisateur puisse reproduire un scénario pédagogique précis. Chaque élément est stylisable (couleur, épaisseur, opacité) ce qui offre une preuve directe de la conformité au cahier des charges.</p>
     </div>
     <div class="content-block">
-      <h4>Contraintes Intelligentes</h4>
-      <p>Les formes peuvent recevoir des contraintes d'alignement, de centrage et de groupage. Ces règles garantissent que les éléments restent correctement positionnés lorsqu'ils sont déplacés ou redimensionnés, ce qui facilite la production de maquettes fidèles aux cahiers des charges.</p>
+      <h4>Contraintes intelligentes</h4>
+      <p>Le moteur de contraintes garantit l’alignement et le centrage automatiques. Les captures ci-dessus démontrent comment les blocs de texte restent solidaires même lorsque l’on applique des transformations successives.</p>
     </div>
     <div class="content-block">
-      <h4>Historique et Annulation</h4>
-      <p>Un système d'historique conserve chaque action et offre la possibilité d'annuler ou de rétablir des modifications, ce qui encourage l'expérimentation sans risque.</p>
+      <h4>Historique et annulation</h4>
+      <p>Un historique complet permet d’annuler/rejouer les actions : indispensable pour valider les séances de tests utilisateurs menées avec le corps enseignant.</p>
     </div>
-  </section>
-
-  <!-- Parcours Utilisateur -->
-  <section class="project-section">
-    <h3>Parcours Utilisateur</h3>
     <div class="project-media website-screenshot">
       <img src="images/dessinator/dessinatorInscription.png" alt="Écran d'inscription à Dessinator">
     </div>
     <div class="content-block">
-      <h4>Accès Simplifié</h4>
-      <p>Les utilisateurs créent rapidement un compte pour enregistrer leurs scènes de dessin et les retrouver lors de sessions ultérieures. Le tableau de bord récapitule les maquettes sauvegardées et permet de démarrer un nouveau projet en un clic.</p>
+      <h4>Parcours utilisateur</h4>
+      <p>L’inscription conserve les scènes de dessin testées durant les démonstrations de restitution. Le retour visuel de cette page illustre la cohérence graphique livrée à la fin du sprint 3.</p>
     </div>
   </section>
 
-  <!-- Technologies Utilisées -->
+  <!-- Compétences développées -->
   <section class="project-section">
-    <h3>Technologies Utilisées</h3>
-    <p>Dessinator s'appuie sur la librairie <strong>Konva.js</strong> pour gérer le rendu canvas, la sélection des calques et les interactions drag-and-drop. L'application exploite également un backend REST pour stocker les contraintes et états des scènes, assurant la persistance des compositions. L'adoption de Konva.js offre un rendu fluide même lorsque de nombreuses formes sont présentes sur la scène.</p>
+    <h3>Compétences développées</h3>
+    <ul class="aligned-list">
+      <li>Modélisation de contraintes graphiques et manipulation avancée du canvas avec <strong>Konva.js</strong>.</li>
+      <li>Conception de structures de données réactives pour synchroniser les éléments d’interface.</li>
+      <li>Organisation du travail en équipe (méthode itérative, revues de code hebdomadaires).</li>
+      <li>Tests utilisateurs ciblés pour valider l’ergonomie et la pertinence des contrôles.</li>
+    </ul>
   </section>
 
   <div class="back-to-projects">

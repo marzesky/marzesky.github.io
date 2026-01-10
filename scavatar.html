@@ -26,45 +26,66 @@
     </div>
   </section>
 
-  <!-- Contexte et Objectifs -->
+  <!-- Contexte du projet -->
   <section class="project-section">
-    <h3>Contexte et Objectifs</h3>
-    <p>L'application répond au besoin de disposer d'une identité visuelle cohérente entre plusieurs services. Scavatar propose une interface claire pour créer un compte, téléverser son avatar et décider s'il est visible publiquement ou non. Chaque image est associée à un hash généré à partir de l'adresse email, garantissant un lien stable et difficile à deviner.</p>
+    <h3>Contexte du projet</h3>
+    <div class="content-block">
+      <ul class="aligned-list">
+        <li>Période : octobre 2025 (pendant le semestre 5 du BUT Informatique).</li>
+        <li>Projet académique encadré, livré en équipe de 3 étudiants.</li>
+        <li>Environ 60 heures de travail cumulées, avec démonstration finale devant le corps enseignant.</li>
+        <li>Contraintes : mettre à disposition une API stable, un espace administrateur et un mode maintenance opérationnel.</li>
+      </ul>
+    </div>
+    <p>Le service devait proposer une identité visuelle cohérente pour l’utilisateur et un moyen centralisé de partager son avatar via une URL unique générée à partir d’un hash d’adresse email.</p>
   </section>
 
-  <!-- Fonctionnalités Clés -->
+  <!-- Méthodes de travail et résultats -->
   <section class="project-section">
-    <h3>Fonctionnalités Clés</h3>
+    <h3>Méthodes de travail et résultats</h3>
+    <div class="content-block">
+      <h4>Ma contribution</h4>
+      <p>Je me suis principalement chargé de l'aspect visuel et de l’ergonomie (design Bulma personnalisé, navigation, guidelines d’accessibilité). J’ai également implémenté le mode maintenance et l’ensemble des fonctionnalités administrateur (gestion des rôles, suppression contrôlée des comptes, vérifications côté serveur).</p>
+    </div>
     <div class="content-block">
       <h4>Gestion des profils</h4>
-      <p>Les utilisateurs peuvent téléverser, mettre à jour ou masquer leur avatar. La validation côté client signale immédiatement si un pseudo ou une adresse email est déjà utilisé, offrant une expérience fluide sans rechargement.</p>
+      <p>Les utilisateurs peuvent téléverser, mettre à jour ou masquer leur avatar. La validation instantanée (email/pseudo) prouve la qualité de l’expérience côté front-end.</p>
     </div>
     <div class="project-media website-screenshot">
       <img src="images/scavatar/scavatarProfil.png" alt="Gestion du profil dans Scavatar">
     </div>
     <div class="content-block">
       <h4>Espace administrateur</h4>
-      <p>Un tableau de bord réservé aux administrateurs permet de parcourir la liste des comptes, de visualiser les rôles et de supprimer des profils, avec des garde-fous empêchant la suppression involontaire d'autres administrateurs.</p>
+      <p>Le tableau de bord admin affiche la liste complète des comptes et permet de gérer les rôles. Des garde-fous empêchent la suppression d’un autre administrateur ou du compte courant, comme montré sur la capture suivante.</p>
     </div>
     <div class="project-media website-screenshot">
       <img src="images/scavatar/scavatarGestionUtilisateurs.png" alt="Espace administrateur de Scavatar">
     </div>
     <div class="content-block">
       <h4>Mode maintenance</h4>
-      <p>Un mode maintenance redirige les visiteurs vers une page dédiée pendant qu'une opération est en cours, tout en laissant l'accès complet aux administrateurs connectés.</p>
+      <p>Le mode maintenance redirige les visiteurs vers une page dédiée tout en laissant l’administration accessible. Cette fonctionnalité a été testée via un script d’activation/désactivation intégré à nos scénarios de recette.</p>
     </div>
     <div class="project-media website-screenshot">
       <img src="images/scavatar/scavatarMaintenance.png" alt="Page de maintenance Scavatar">
     </div>
-  </section>
-
-  <!-- Technologies -->
-  <section class="project-section">
-    <h3>Technologies Utilisées</h3>
     <div class="project-media website-screenshot">
       <img src="images/scavatar/scavatarInscription.png" alt="Formulaire d'inscription Scavatar">
     </div>
-    <p>Scavatar est développé avec <strong>Symfony</strong> et une base de données <strong>MySQL</strong>. Le front-end s'appuie sur le framework CSS <strong>Bulma</strong> pour une interface responsive. L'application applique les bonnes pratiques de sécurité de Symfony : hachage des mots de passe, protection CSRF et vérification stricte des fichiers envoyés.</p>
+    <div class="content-block">
+      <h4>Parcours utilisateur</h4>
+      <p>L’inscription transmet des retours en direct sur la disponibilité du pseudo et de l’email. Cela illustre le travail mené sur l’ergonomie et sur les vérifications asynchrones côté Symfony.</p>
+    </div>
+  </section>
+
+  <!-- Compétences développées -->
+  <section class="project-section">
+    <h3>Compétences développées</h3>
+    <ul class="aligned-list">
+      <li>Conception d’interfaces responsive avec <strong>Bulma</strong> et respect des bonnes pratiques UX.</li>
+      <li>Mise en œuvre de fonctionnalités sécurisées avec <strong>Symfony</strong> (hash des mots de passe, CSRF, validations serveur).</li>
+      <li>Gestion de rôles et mise en place d’outils d’administration pour un service multi-utilisateur.</li>
+      <li>Industrialisation de fonctionnalités transverses (mode maintenance, scripts CLI) et rédaction de scénarios de tests.</li>
+    </ul>
   </section>
 
   <div class="back-to-projects">
