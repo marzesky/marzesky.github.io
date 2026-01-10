@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dessinator - Application web de dessin sous contraintes développée avec Konva.js">
+  <title>Antoni Marzewski - Dessinator</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="menu-placeholder"></div>
+
+<main class="project-page">
+  <!-- Project Header -->
+  <section class="project-section">
+    <h2>Dessinator</h2>
+    <div class="project-media rectangular">
+      <img src="images/dessinator/dessinatorLogo.png" alt="Logo de l'application Dessinator">
+    </div>
+    <div class="project-content">
+      <p>Dessinator est une application web de dessin sous contraintes conçue pour aider les étudiants à structurer leurs compositions graphiques. Elle permet de créer des formes telles que des ellipses, des rectangles, des lignes ou des zones de texte, tout en appliquant des règles de mise en page précises.</p>
+      <div class="project-date">Septembre 2025 - Décembre 2025</div>
+    </div>
+  </section>
+
+  <!-- Contexte et Objectifs -->
+  <section class="project-section">
+    <h3>Contexte et Objectifs</h3>
+    <p>L'objectif principal de Dessinator est de proposer un atelier numérique pour explorer les principes de composition visuelle. Les utilisateurs peuvent manipuler des formes, définir des contraintes d'alignement horizontal ou vertical, imposer un centrage automatique et regrouper des éléments pour créer des maquettes cohérentes. L'application guide ainsi l'utilisateur vers une organisation rigoureuse sans sacrifier la créativité.</p>
+  </section>
+
+  <!-- Fonctionnalités Clés -->
+  <section class="project-section">
+    <h3>Fonctionnalités Clés</h3>
+    <div class="project-media website-screenshot">
+      <img src="images/dessinator/dessinatorDessinExemple.png" alt="Exemple de dessin créé avec Dessinator">
+    </div>
+    <div class="content-block">
+      <h4>Bibliothèque de Formes</h4>
+      <p>La palette de Dessinator inclut des ellipses, rectangles, lignes directrices et blocs de texte. Chaque élément peut être stylisé (couleurs, épaisseur de trait, niveau de transparence) afin de composer des scènes variées.</p>
+    </div>
+    <div class="content-block">
+      <h4>Contraintes Intelligentes</h4>
+      <p>Les formes peuvent recevoir des contraintes d'alignement, de centrage et de groupage. Ces règles garantissent que les éléments restent correctement positionnés lorsqu'ils sont déplacés ou redimensionnés, ce qui facilite la production de maquettes fidèles aux cahiers des charges.</p>
+    </div>
+    <div class="content-block">
+      <h4>Historique et Annulation</h4>
+      <p>Un système d'historique conserve chaque action et offre la possibilité d'annuler ou de rétablir des modifications, ce qui encourage l'expérimentation sans risque.</p>
+    </div>
+  </section>
+
+  <!-- Parcours Utilisateur -->
+  <section class="project-section">
+    <h3>Parcours Utilisateur</h3>
+    <div class="project-media website-screenshot">
+      <img src="images/dessinator/dessinatorInscription.png" alt="Écran d'inscription à Dessinator">
+    </div>
+    <div class="content-block">
+      <h4>Accès Simplifié</h4>
+      <p>Les utilisateurs créent rapidement un compte pour enregistrer leurs scènes de dessin et les retrouver lors de sessions ultérieures. Le tableau de bord récapitule les maquettes sauvegardées et permet de démarrer un nouveau projet en un clic.</p>
+    </div>
+  </section>
+
+  <!-- Technologies Utilisées -->
+  <section class="project-section">
+    <h3>Technologies Utilisées</h3>
+    <p>Dessinator s'appuie sur la librairie <strong>Konva.js</strong> pour gérer le rendu canvas, la sélection des calques et les interactions drag-and-drop. L'application exploite également un backend REST pour stocker les contraintes et états des scènes, assurant la persistance des compositions. L'adoption de Konva.js offre un rendu fluide même lorsque de nombreuses formes sont présentes sur la scène.</p>
+  </section>
+
+  <div class="back-to-projects">
+    <a href="projects.html" class="back-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Retour à la liste des projets
+    </a>
+  </div>
+</main>
+
+<script src="./script.js"></script>
+</body>
+</html>
+
