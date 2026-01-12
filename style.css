@@ -891,6 +891,27 @@ p {
   margin-bottom: 1rem;
 }
 
+.but-heading {
+  margin-top: 4rem;
+  font-size: 2.2rem;
+  color: var(--accent-color);
+}
+
+.competence-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--secondary-color);
+  border-left: 4px solid var(--accent-color);
+}
+
+.project-section .competence-label {
+  font-size: 1.5rem;
+}
+
 .scroll-indicator-bottom {
   position: fixed;
   bottom: 1rem;
