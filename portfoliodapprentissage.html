@@ -19,7 +19,7 @@
     <p>
       Ce portfolio présente l'analyse de mes compétences acquises durant le BUT Informatique, 
       en me concentrant sur les trois compétences qui s'arrêtent au niveau 2. Pour chaque apprentissage 
-      critique, je détaille les projets et expériences qui m'ont permis de les acquérir.
+      critique, je détaille les projets et expériences qui m'ont permis de les acquérir ; les noms de projets sont des liens vers leur page descriptive.
     </p>
   </section>
 
@@ -32,18 +32,18 @@
     <div class="competence-block">
       <h4>AC31.01 | Choisir et implémenter les architectures adaptées</h4>
       <p><strong>Niveau : En cours d'acquisition</strong></p>
-      <p>Projet démonstratif : Scavatar</p>
+      <p>Projets démonstratifs : <a href="scavatar.html">Scavatar</a> et <a href="dessinator.html">Dessinator</a></p>
       <ul>
-        <li>Mise en place d'une architecture Symfony modulaire (séparation contrôleurs / services / formulaires).</li>
-        <li>Choix d'une base MySQL avec couche d'accès standardisée via Doctrine.</li>
-        <li>Découpage du front-end en composants Bulma réutilisables pour accélérer les itérations.</li>
+        <li><strong>Scavatar</strong> : architecture Symfony modulaire (séparation contrôleurs / services / formulaires).</li>
+        <li><strong>Scavatar</strong> : base MySQL avec accès standardisé via Doctrine ; front découpé en composants Bulma réutilisables.</li>
+        <li><strong>Dessinator</strong> : application front-end autour du canvas <strong>Konva.js</strong>, séparation claire entre moteur de contraintes, modèle des formes et interface.</li>
       </ul>
     </div>
 
     <div class="competence-block">
       <h4>AC31.02 | Faire évoluer une application existante</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>Projet démonstratif : Stage Quadient</p>
+      <p>Projet démonstratif : <a href="stageQuadient.html">Stage Quadient</a></p>
       <ul>
         <li>Analyse du portail interne existant et proposition de correctifs ciblés.</li>
         <li>Ajout de nouvelles interfaces et ajustements UX/UI en respectant l'architecture existante.</li>
@@ -54,7 +54,7 @@
     <div class="competence-block">
       <h4>AC31.03 | Intégrer des solutions dans un environnement de production</h4>
       <p><strong>Niveau : En cours d'acquisition</strong></p>
-      <p>Projet démonstratif : Stage Quadient</p>
+      <p>Projet démonstratif : <a href="stageQuadient.html">Stage Quadient</a></p>
       <ul>
         <li>Participation aux mises en production supervisées du portail (suivi des pipelines internes).</li>
         <li>Rédaction de tickets de déploiement et coordination avec l'équipe Ops.</li>
@@ -69,14 +69,19 @@
 
     <div class="competence-block">
       <h4>AC33.01 | Créer des processus de traitement automatisé</h4>
-      <p><strong>Niveau : À renforcer</strong></p>
-      <p>Pas de projet présenté dans ce portfolio qui correspond directement à cet apprentissage critique.</p>
+      <p><strong>Niveau : En cours d'acquisition</strong></p>
+      <p>Projet démonstratif : <a href="autocompletion-texte-scala.html">Autocomplétion par n-grammes (Scala)</a></p>
+      <ul>
+        <li>Pipeline automatique bout en bout : fusion des fichiers ressources, tokenisation déterministe du corpus français, apprentissage des distributions conditionnelles P(mot<sub>i+1</sub> | contexte de <em>n</em> mots), conversion en trie, puis exposition du résultat en suggestions numérotées ou en génération itérative au terminal.</li>
+        <li>Processus répétables et locales (sans service réseau) pilotés après compilation par <code>sbt run</code>, avec prompts pour <em>n</em> et le mode métier.</li>
+        <li>Version d’étude optimisée en complexité : passe linéaire sur un tableau de jetons au lieu d’algorithmes quadratiques sur listes lors de l’apprentissage, pour supporter de gros corpus.</li>
+      </ul>
     </div>
 
     <div class="competence-block">
       <h4>AC33.02 | Configurer un serveur et des services réseaux de manière avancée</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>Projet démonstratif : TP Virtualisation Docker</p>
+      <p>Projet démonstratif : <a href="virtualisation.html">TP Virtualisation Docker</a></p>
       <ul>
         <li>Déploiement de stacks MySQL/PostgreSQL derrière des reverse proxy.</li>
         <li>Scripts de composition Docker pour orchestrer les services.</li>
@@ -87,7 +92,7 @@
     <div class="competence-block">
       <h4>AC33.03 | Appliquer une politique de sécurité au niveau de l’infrastructure</h4>
       <p><strong>Niveau : En cours d'acquisition</strong></p>
-      <p>Projets démonstratifs : Stage Quadient et Scavatar</p>
+      <p>Projets démonstratifs : <a href="stageQuadient.html">Stage Quadient</a> et <a href="scavatar.html">Scavatar</a></p>
       <ul>
         <li>Mise en conformité des environnements de staging chez Quadient (revue des droits et audits XSS/CSRF).</li>
         <li>Implémentation du mode maintenance et des rôles administrateur sur Scavatar avec contrôles d’accès renforcés.</li>
@@ -102,18 +107,16 @@
     </div>
   </section>
 
-  </section>
-
   <section class="project-section">
     <p class="competence-label">Compétence 6 : Collaborer</p>
 
     <div class="competence-block">
       <h4>AC36.01 | Organiser et partager une veille technologique et informationnelle</h4>
       <p><strong>Niveau : En cours d'acquisition</strong></p>
-      <p>Projet démonstratif : Scavatar</p>
+      <p>Projets démonstratifs : <a href="scavatar.html">Scavatar</a> et <a href="dessinator.html">Dessinator</a></p>
       <ul>
-        <li>Rédaction d’un carnet de veille (Symfony 7, bonnes pratiques Bulma) partagé avec l’équipe.</li>
-        <li>Présentation hebdomadaire des nouveautés identifiées et évaluation de leur impact potentiel.</li>
+        <li><strong>Scavatar</strong> : carnet de veille (Symfony 7, bonnes pratiques Bulma) partagé avec l’équipe ; présentation hebdomadaire des nouveautés et de leur impact.</li>
+        <li><strong>Dessinator</strong> : veille sur l’écosystème Konva.js / canvas, patterns d’interaction et bonnes pratiques pour le rendu sous contraintes.</li>
       </ul>
     </div>
 
@@ -126,7 +129,7 @@
     <div class="competence-block">
       <h4>AC36.03 | Guider la conduite du changement informatique</h4>
       <p><strong>Niveau : En cours d'acquisition</strong></p>
-      <p>Projet démonstratif : Stage Quadient</p>
+      <p>Projet démonstratif : <a href="stageQuadient.html">Stage Quadient</a></p>
       <ul>
         <li>Accompagnement des utilisateurs internes lors de la mise à jour du portail.</li>
         <li>Préparation de supports de communication et sessions de formation express.</li>
@@ -136,10 +139,10 @@
     <div class="competence-block">
       <h4>AC36.04 | Accompagner le management de projet informatique</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>Projet démonstratif : Stage Quadient</p>
+      <p>Projets démonstratifs : <a href="stageQuadient.html">Stage Quadient</a> et <a href="dessinator.html">Dessinator</a></p>
       <ul>
-        <li>Participation aux rituels SCRUM (daily, sprint review, rétrospective).</li>
-        <li>Suivi des indicateurs de sprint et répartition des tâches via l’outil interne de gestion.</li>
+        <li><strong>Stage Quadient</strong> : rituels SCRUM (daily, sprint review, rétrospective) ; suivi des indicateurs et répartition des tâches via l’outil interne.</li>
+        <li><strong>Dessinator</strong> : travail en équipe de cinq, organisation itérative par sprints et revues de code hebdomadaires jusqu’à la restitution utilisateurs.</li>
       </ul>
     </div>
   </section>
@@ -153,9 +156,7 @@
     <div class="competence-block">
       <h4>AC23.01 | Concevoir et développer des applications communicantes</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>
-        Projet démonstratif : Very Bad Split
-      </p>
+      <p>Projet démonstratif : <a href="verybadsplit.html">Very Bad Split</a></p>
       <ul>
         <li>Développement d'une application web MVC en PHP permettant la gestion de dépenses partagées</li>
         <li>Implémentation d'un système de communication entre utilisateurs pour le partage des dépenses</li>
@@ -166,9 +167,7 @@
     <div class="competence-block">
       <h4>AC23.02 | Utiliser des serveurs et des services réseaux virtualisés</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>
-        Projet démonstratif : TP Virtualisation Docker
-      </p>
+      <p>Projet démonstratif : <a href="virtualisation.html">TP Virtualisation Docker</a></p>
       <ul>
         <li>Configuration et déploiement de conteneurs Docker pour différents services</li>
         <li>Mise en place d'une infrastructure complète avec MySQL, PostgreSQL et Apache</li>
@@ -179,9 +178,7 @@
     <div class="competence-block">
       <h4>AC23.03 | Sécuriser les services et données d'un système</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>
-        Projets démonstratifs : Stage Quadient et Very Bad Split
-      </p>
+      <p>Projets démonstratifs : <a href="stageQuadient.html">Stage Quadient</a> et <a href="verybadsplit.html">Very Bad Split</a></p>
       <ul>
         <li>Correction de vulnérabilités XSS et d'injection SQL chez Quadient</li>
         <li>Implémentation de mesures de sécurité pour les transactions financières dans Very Bad Split</li>
@@ -197,9 +194,7 @@
     <div class="competence-block">
       <h4>AC24.01 | Optimiser les modèles de données de l'entreprise</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>
-        Projet démonstratif : Scoleton
-      </p>
+      <p>Projet démonstratif : <a href="Scoleton.html">Scoleton</a></p>
       <ul>
         <li>Conception d'une base de données optimisée pour la gestion des notes d'étudiants</li>
         <li>Mise en place d'un système d'import efficace pour les fichiers XLSX</li>
@@ -210,9 +205,7 @@
     <div class="competence-block">
       <h4>AC24.02 | Assurer la sécurité des données (intégrité et confidentialité)</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>
-        Projets démonstratifs : TP Virtualisation et Very Bad Split
-      </p>
+      <p>Projets démonstratifs : <a href="virtualisation.html">TP Virtualisation Docker</a> et <a href="verybadsplit.html">Very Bad Split</a></p>
       <ul>
         <li>Implémentation de connexions sécurisées PDO pour les bases de données</li>
         <li>Protection des données sensibles des utilisateurs</li>
@@ -223,9 +216,7 @@
     <div class="competence-block">
       <h4>AC24.03 | Organiser la restitution de données à travers la programmation et la visualisation</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>
-        Projet démonstratif : Scoleton
-      </p>
+      <p>Projet démonstratif : <a href="Scoleton.html">Scoleton</a></p>
       <ul>
         <li>Développement d'un système de génération automatique d'avis en PDF</li>
         <li>Création d'interfaces de visualisation des données étudiantes</li>
@@ -236,9 +227,7 @@
     <div class="competence-block">
       <h4>AC24.04 | Manipuler des données hétérogènes</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>
-        Projets démonstratifs : TP Virtualisation et Scoleton
-      </p>
+      <p>Projets démonstratifs : <a href="virtualisation.html">TP Virtualisation Docker</a> et <a href="Scoleton.html">Scoleton</a></p>
       <ul>
         <li>Gestion simultanée de données MySQL et PostgreSQL dans le TP Virtualisation</li>
         <li>Transformation de données XLSX en différents formats dans Scoleton</li>
@@ -254,9 +243,7 @@
     <div class="competence-block">
       <h4>AC25.01 | Identifier les processus présents dans une organisation en vue d'améliorer les systèmes d'information</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>
-        Projet démonstratif : Stage Quadient
-      </p>
+      <p>Projet démonstratif : <a href="stageQuadient.html">Stage Quadient</a></p>
       <ul>
         <li>Analyse des processus existants pour l'amélioration de l'application web</li>
         <li>Identification des points d'amélioration dans le système</li>
@@ -267,9 +254,7 @@
     <div class="competence-block">
       <h4>AC25.02 | Formaliser les besoins du client et de l'utilisateur</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>
-        Projet démonstratif : Stage Quadient
-      </p>
+      <p>Projet démonstratif : <a href="stageQuadient.html">Stage Quadient</a></p>
       <ul>
         <li>Recueil et analyse des besoins utilisateurs</li>
         <li>Traduction des besoins en spécifications techniques</li>
@@ -280,9 +265,7 @@
     <div class="competence-block">
       <h4>AC25.03 | Identifier les critères de faisabilité d'un projet informatique</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>
-        Projet démonstratif : Very Bad Split
-      </p>
+      <p>Projet démonstratif : <a href="verybadsplit.html">Very Bad Split</a></p>
       <ul>
         <li>Évaluation de la faisabilité technique du support multi-devises</li>
         <li>Analyse des contraintes pour le calcul automatique des remboursements</li>
@@ -293,9 +276,7 @@
     <div class="competence-block">
       <h4>AC25.04 | Définir et mettre en œuvre une démarche de suivi de projet</h4>
       <p><strong>Niveau : Acquis</strong></p>
-      <p>
-        Projet démonstratif : Stage Quadient
-      </p>
+      <p>Projet démonstratif : <a href="stageQuadient.html">Stage Quadient</a></p>
       <ul>
         <li>Participation active aux rituels Agile (daily meetings, sprints)</li>
         <li>Utilisation d'outils de suivi de projet</li>

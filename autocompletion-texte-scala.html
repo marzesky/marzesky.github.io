@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projet Scala 3 — modèle Markov par n-grammes, trie de distributions et autocomplétion terminale">
+  <title>Antoni Marzewski — Autocomplétion par n-grammes (Scala)</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="menu-placeholder"></div>
+
+<main class="project-page">
+  <section class="project-section">
+    <h2>Prog Fonctionnel — Autocomplétion texte</h2>
+    <div class="project-content">
+      <p>
+        Petit programme <strong>pédagogique en Scala&nbsp;3</strong>&nbsp;: à partir de textes littéraires français (Les Misérables, extraits Wikipedia), il construit un <strong>modèle de langue Markov à ordre fixe</strong>
+        (<em>n</em>-grammes), puis stocke les probabilités du mot suivant dans un <strong>trie</strong>
+        (structure imposée, clés = chaînes de contexte complètes). Deux usages en ligne de commande après <code>sbt run</code>&nbsp;: <strong>suggestions interactives</strong> (top 5) ou <strong>génération répétée du meilleur suivant</strong> (greedy). Pas de serveur HTTP ni interface web dans le dépôt.
+      </p>
+      <div class="project-date">Programmation fonctionnelle • Scala 3.3.7 • sbt</div>
+      <div class="project-links">
+        <a href="https://gitlabinfo.iutmontp.univ-montp2.fr/marzewskia-jolyq/prog-fonc-projet-autocompletion-texte" class="download-button" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          Dépôt GitLab
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h3>Enchaînement automatique</h3>
+    <div class="content-block">
+      <ul>
+        <li>fusion des fichiers <code>.txt</code> sous <code>src/main/resources/</code> ;</li>
+        <li>tokenisation (minuscules, lettres françaises, tirets coupés)&nbsp;;</li>
+        <li><strong><code>apprendre(texte, n)</code></strong> — fenêtre glissante, comptes puis normalisation (MLE) ;</li>
+        <li><strong><code>modeleVersTrie</code></strong> — construction du trie de <code>Distribution</code>&nbsp;;</li>
+        <li>mode 1 : boucle terminale « phrase + suggestion » ; mode 2 : génération jusqu’à N mots ou arrêt si contexte inconnu.</li>
+      </ul>
+      <p>Les sorties peuvent paraître plausibles au niveau des enchaînements lexicaux, sans cohérence sémantique — comme prévu dans l’extension « aller plus loin » du sujet.</p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h3>Comment lancer</h3>
+    <div class="content-block">
+      <div class="code-block">
+        <pre><code># À la racine du projet sbt « Prog Fonc - Projet Autocompletion Texte »
+sbt run</code></pre>
+      </div>
+      <p>L’outil demande la taille de contexte <em>n</em> (entrée vide = 3 par défaut), puis le mode (autocomplétion ou génération). Entrées et sorties passent par le terminal (<code>StdIn</code> / impressions). Après clonage depuis le <a href="https://gitlabinfo.iutmontp.univ-montp2.fr/marzewskia-jolyq/prog-fonc-projet-autocompletion-texte" target="_blank" rel="noopener noreferrer">dépôt GitLab</a>, exécute ces commandes à la racine du projet.</p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h3>Limitations (transparence)</h3>
+    <ul>
+      <li>Pas de lissage ni de <em>backoff</em> — contextes rares ⇒ pas de prédictions.</li>
+      <li>Génération <em>greedy</em>, déterministe, pas de tirage probabiliste ni de « petit LM » type réseaux de neurones.</li>
+      <li>Bruit mineur possible (en-têtes Gutenberg en anglais encore tokenisées).</li>
+    </ul>
+    <div class="content-block">
+      <p><strong>Crédits données</strong> — Victor Hugo, Project Gutenberg, extraits Wikipédia — sources documentaires uniquement.</p>
+    </div>
+  </section>
+
+  <div class="back-to-projects">
+    <a href="projects.html" class="back-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Retour à la liste des projets
+    </a>
+  </div>
+</main>
+
+<script src="./script.js"></script>
+</body>
+</html>
